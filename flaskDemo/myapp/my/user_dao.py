@@ -1,5 +1,5 @@
-from app.my.my_user import User
-from app.my.my_app import db
+from myapp.my.my_user import User
+from myapp.my.my_app import db
 
 
 # 2.增加记录

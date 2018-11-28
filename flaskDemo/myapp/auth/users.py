@@ -1,6 +1,6 @@
 from flask import request, jsonify
-from app.models import *
-from app.auth.__init__ import auth
+from myapp.models import *
+from myapp.auth.__init__ import auth
 
 
 @auth.route('/apidemo', methods=['GET', 'POST'])

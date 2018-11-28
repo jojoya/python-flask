@@ -32,9 +32,9 @@ def valid_login(username, password):
 
 
 def log_the_user_in(username):
-    app.logger.debug('app.logger value for debugging')
-    app.logger.warning('app.logger warning occurred (%d apples)', 42)
-    app.logger.error('app.logger error occurred')    # 按照用户名查找用户信息
+    app.logger.debug('myapp.logger value for debugging')
+    app.logger.warning('myapp.logger warning occurred (%d apples)', 42)
+    app.logger.error('myapp.logger error occurred')    # 按照用户名查找用户信息
     # data = {'id': 123456, 'name': username, 'message': 'You have requested by POST method.'}
     data = dict(id="1", name=username, message="You have requested by POST method.")
     return jsonify(data)    # 返回json数据用jsonify
@@ -55,7 +55,7 @@ def login():
 
 
 if __name__ == "__main__":
-    # app.env = 'development'
-    # app.debug = True
+    # myapp.env = 'development'
+    # myapp.debug = True
     app.run(host='0.0.0.0', debug=True)
 

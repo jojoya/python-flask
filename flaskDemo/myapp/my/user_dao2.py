@@ -1,8 +1,8 @@
 # from sqlalchemy.sql.elements import or_, and_
 
 from sqlalchemy import and_, or_, not_
-from app.my.my_user import User
-from app.my.my_app import db
+from myapp.my.my_user import User
+from myapp.my.my_app import db
 
 # 添加数据
 user = User('xiaoxiao', 'ss123', 1)
