@@ -1,9 +1,0 @@
-##安装外部依赖
-python -m pip install xxx
-##生成项目依赖配置文件
-python -m pip install pipreqs
-pipreqs ./ --encoding=utf8 --force
-##添加依赖到配置管理
-pip3 freeze > requirements.txt
-##批量安装项目依赖
-pip install -r  requirements.txt
