@@ -4,7 +4,7 @@ manage.py是Flask应用的启动脚本，用于启动程序
 import os
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager, Shell
-from app import create_app, db
+from myapp import create_app, db
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)

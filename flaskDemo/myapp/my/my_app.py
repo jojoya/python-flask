@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:123456@127.0.0.1/d
 # database = 'db_jojoya'
 # hostname = '127.0.0.1'
 # my_url = "mysql+pymysql://" + str(my_username) + ":" + str(my_password) + "@" + str(hostname) + "/" + str(database)"
-# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://" + my_username + ":" + my_password + "@" + hostname + "/" + database"
+# myapp.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://" + my_username + ":" + my_password + "@" + hostname + "/" + database"
 
 # 配置flask配置对象中键：SQLALCHEMY_COMMIT_TEARDOWN,设置为True,应用会自动在每次请求结束后提交数据库中变动
 

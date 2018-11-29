@@ -7,6 +7,6 @@ def hello_world():
 
 
 if __name__ == "__main__":
-    # app.env = 'development'
-    # app.debug = True
+    # myapp.env = 'development'
+    # myapp.debug = True
     app.run(host='0.0.0.0', debug=True)

@@ -1,6 +1,6 @@
 import unittest
 from flask import current_app
-from app import create_app, db
+from myapp import create_app, db
 
 
 class BasicTestCase(unittest.TestCase):
@@ -24,9 +24,11 @@ class BasicTestCase(unittest.TestCase):
 
     def test_app_exists(self):
         """测试确保程序实例存在"""
+        print("test_app_exists")
         self.assertFalse(current_app is None)
 
     def test_app_is_testing(self):
         """测试确保程序在测试配置中运行"""
+        print("test_app_is_testing")
         self.assertTrue(current_app.config['TESTING'])
 

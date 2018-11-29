@@ -1,4 +1,4 @@
-from app.my.my_app import db
+from myapp.my.my_app import db
 
 
 # 创建模型对象
