@@ -23,5 +23,4 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 # 获取SQLAlchemy实例对象，接下来就可以使用对象调用数据
-
 db = SQLAlchemy(app)
