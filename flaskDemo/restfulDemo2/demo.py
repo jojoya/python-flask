@@ -14,7 +14,8 @@ parser_put.add_argument("pwd", type=str, required=True, help="need pwd data")
 
 # 功能方法部分案例
 def to_do(arg1, args2):
-    return str(arg1) + str(args2)
+    return {'user': str(arg1), 'pwd': str(args2)}
+    # return str(arg1) + str(args2)
 
 
 # 操作（post / get）资源列表
