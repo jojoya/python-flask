@@ -1,7 +1,6 @@
 alembic==1.0.5
 aniso8601==4.0.1
 asn1crypto==0.24.0
-BareNecessities==0.2.8
 bottle==0.12.16
 certifi==2018.10.15
 cffi==1.11.5
@@ -25,7 +24,6 @@ HTMLParser==0.0.2
 idna==2.7
 itsdangerous==1.1.0
 Jinja2==2.10
-Mail==2.1.0
 Mako==1.0.7
 MarkupSafe==1.1.0
 pipreqs==0.4.9
