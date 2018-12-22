@@ -1,12 +1,11 @@
 # encoding: utf-8
 import os
 from flask_script import Manager
-from websocketDemo4.app import app_create
 from flask_migrate import Migrate, MigrateCommand
-from websocketDemo4.app import db, socketio  # 新添加代码
+from app import app_create, db, socketio     # 新添加代码
 
-
-app = app_create(os.getenv('FLASK_CONFIG') or 'default')  # 设置启动方式，可选：development、testing、production
+# app = app_create(os.getenv('FLASK_CONFIG') or 'default')  # 设置启动方式，可选：development、testing、production
+app = app_create('default')  # 设置启动方式，可选：development、testing、production
 manager = Manager(app)
 migrate = Migrate(app, db)  # 使用Migrate将app与db关联
 
@@ -32,6 +31,6 @@ migrate = Migrate(app, db)  # 使用Migrate将app与db关联
 manager.add_command('db', MigrateCommand)
 manager.add_command('run', socketio.run(app=app, host='0.0.0.0', port=5000))  # 新加入的代码，重写manager的run命令
 
-
 if __name__ == '__main__':
     manager.run()
+    # app.run(host='0.0.0.0', port=5000)
