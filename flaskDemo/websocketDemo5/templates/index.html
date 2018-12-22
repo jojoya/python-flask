@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js">
+        $(document).ready(function(){
+            myurl = 'http"//' + document.domain + ':' + location.port + '/test';
+            //没错是用http开头的url了，因为这个库会自动解析并帮我们创建websocket对象的
+            //最后的namespace是websocket中的命名空间，后面再讲
+            var socket = io.connect(myurl);
+
+            //发送消息
+            socket.emit('request_for_response',{'param':'value'});
+
+            //监听回复的消息
+            socket.on('response',function(data){
+                if (data.code == '200'){
+                    alert(data.msg);
+                }
+                else{
+                    alert('ERROR:' + data.msg);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        账号:<input id="account" type="text" placeholder="请输入手机号码"><br>
+        密码:<input id="password" type="password" placeholder="请输入密码">
+        <button onclick="showAccountPassword()">提交</button>
+    </form>
+    <!--你输入的信息是：<a id="output"></a>-->
+    你输入的信息是：<div id="output"></div>
+    <script>
+        function showAccountPassword()
+        {
+            account = document.getElementById("account").value;
+            var password = document.getElementById("password").value;
+            // document.getElementById("output").innerHTML="My First JavaScript Function";
+            var output = document.getElementById("output");
+            output.innerHTML = output.innerText+account;
+
+        }
+    </script>
+</body>
+</html>
