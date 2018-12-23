@@ -14,6 +14,7 @@ Flask==1.0.2
 Flask-Cors==3.0.6
 Flask-HTTPAuth==3.2.4
 Flask-Migrate==2.3.1
+flask-monitor==0.2.6
 Flask-RESTful==0.3.6
 Flask-Script==2.0.6
 Flask-SocketIO==3.1.1
@@ -23,6 +24,7 @@ gevent-websocket==0.10.1
 greenlet==0.4.15
 HTMLParser==0.0.2
 idna==2.7
+influxdb==5.2.0
 itsdangerous==1.1.0
 Jinja2==2.10
 Mail==2.1.0
