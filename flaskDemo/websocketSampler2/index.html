@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Flask-SocketIO Test</title>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        // var socket = io.connect('http://127.0.0.1:5001');
+        var socket = io.connect('http://127.0.0.1:5001/test');
+
+        socket.on('connect', function() {
+            // socket.emit('svr_send_message', {data: 'connected!'});
+            socket.emit('client_msg', {data: 'connected!'});
+            $('#log').append('<br>' + $('<div/>').text('my connected!').html());
+        })
+
+
+        $('form#emit').submit(function(event) {
+                socket.emit('svr_send_message', {data: $('#emit_data').val()});
+                // socket.emit('client_event', 123);
+                return false;
+        });
+        socket.on('server_response', function(msg) {
+            // msg = JSON.parse(msg)
+            // const value = JSON.stringify(msg.data)
+            if(msg instanceof String ==true){
+                $('#log').append('<br>' + $('<div/>').text('Received _ emit #' + ': ' + msg.data).html());
+            }else if(msg instanceof Object ==true){
+                // msg = JSON.parse(msg)
+                data = msg.data
+                console.log(typeof data);
+                console.log(data);
+                data = JSON.stringify(data);
+                console.log(typeof data);
+                console.log(data);
+                $('#log').append('<br>' + $('<div/>').text('Received _ emit #' + ': ' + data).html());
+            }
+        });
+
+        $('form#msg').submit(function(event) {
+                socket.emit('client_msg', {data: $('#emit_msg').val()});
+                // socket.emit('client_event', 123);
+                return false;
+        });
+        socket.on('server_msg', function(msg) {
+            // msg = JSON.parse(msg)
+            // const value = JSON.stringify(msg.data)
+            $('#log').append('<br>' + $('<div/>').text(' Received  _ msg #' + ': ' + msg.data).html());
+        });
+    });
+
+    </script>
+</head>
+<body>
+    <h2>用例执行结果</h2>
+    <form id="msg" method="POST" action='#'>
+        <input type="text" name="emit_msg" id="emit_msg" placeholder="Message">
+        <input type="submit" value="msg">
+    </form>
+    <form id="emit" method="POST" action='#'>
+        <input type="text" name="emit_data" id="emit_data" placeholder="Message">
+        <input type="submit" value="msg(10条)">
+    </form>
+    <div id='log'></div>
+</body>
+</html>

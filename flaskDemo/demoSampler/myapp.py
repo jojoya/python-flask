@@ -1,6 +1,6 @@
 from flask import Flask
 
-from src.myviews import login, first_flask
+from demoSampler.src.myviews import login, first_flask
 
 app = Flask(__name__, template_folder='src/templates')
 
