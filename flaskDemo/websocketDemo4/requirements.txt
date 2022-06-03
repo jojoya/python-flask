@@ -1,7 +1,7 @@
 alembic==1.0.5
 aniso8601==4.0.1
 asn1crypto==0.24.0
-bottle==0.12.16
+bottle==0.12.20
 certifi==2018.10.15
 cffi==1.11.5
 chardet==3.0.4
